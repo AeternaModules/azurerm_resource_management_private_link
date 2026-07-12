@@ -1,3 +1,7 @@
+output "resource_management_private_links_id" {
+  description = "Map of id values across all resource_management_private_links, keyed the same as var.resource_management_private_links"
+  value       = { for k, v in azurerm_resource_management_private_link.resource_management_private_links : k => v.id }
+}
 output "resource_management_private_links_location" {
   description = "Map of location values across all resource_management_private_links, keyed the same as var.resource_management_private_links"
   value       = { for k, v in azurerm_resource_management_private_link.resource_management_private_links : k => v.location }
